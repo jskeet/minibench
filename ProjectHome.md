@@ -1,0 +1,3 @@
+MiniBench makes it easy for developers to write and share tests to investigate and measure code performance.
+
+It is aimed at developers asking and answering questions on newsgroups and Q&A web sites such as [Stack Overflow](http://stackoverflow.com). A web site hosting benchmarks for the purpose of sharing them will also be created (probably as part of the [C# in Depth](http://csharpindepth.com) site).
