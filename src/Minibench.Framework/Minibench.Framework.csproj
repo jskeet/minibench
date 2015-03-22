@@ -34,7 +34,7 @@
     <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\Release\Minibench.Framework.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\Minibench Release.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
