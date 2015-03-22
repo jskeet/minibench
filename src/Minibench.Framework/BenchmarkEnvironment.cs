@@ -18,7 +18,7 @@ namespace Minibench.Framework
         public bool Is64BitOperatingSystem { get; }
         public string Machine { get; }
 
-        public static BenchmarkEnvironment CurrentSystem { get; } = new Builder().Build();
+        public static BenchmarkEnvironment CurrentSystem { get; } = Builder.FromSystem().Build();
 
         private BenchmarkEnvironment(Builder builder)
         {
