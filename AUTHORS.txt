@@ -1,0 +1,3 @@
+Minibench contains code contributed by:
+
+Jon Skeet <skeet@pobox.com>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Minibench.Framework.Skeet</id>
+    <version>0.1.0</version>
+    <authors>Jon Skeet</authors>
+    <owners>Jon Skeet</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://nodatime.org/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple micro-benchmarking framework</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>benchmark</tags>
+    <dependencies>
+      <dependency id="Microsoft.Bcl.Immutable" version="1.0.34" />
+    </dependencies>
+  </metadata>  
+  <files>
+    <file src="bin\Release\Minibench.Framework.dll" target="lib\net45" />
+    <file src="bin\Release\Minibench.Framework.pdb" target="lib\net45" />
+    <file src="bin\Release\Minibench.Framework.xml" target="lib\net45" />
+  </files>
+</package>
