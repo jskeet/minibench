@@ -44,7 +44,7 @@ namespace CommandLine.Text
     /// <summary>
     /// Models an abstract sentence builder.
     /// </summary>
-    public abstract class BaseSentenceBuilder
+    internal abstract class BaseSentenceBuilder
     {
         /// <summary>
         /// Creates the built in sentence builder.
@@ -109,7 +109,7 @@ namespace CommandLine.Text
     /// <summary>
     /// Models an english sentence builder, currently the default one.
     /// </summary>
-    public class EnglishSentenceBuilder : BaseSentenceBuilder
+    internal class EnglishSentenceBuilder : BaseSentenceBuilder
     {
         /// <summary>
         /// Gets a string containing word 'option' in english.
@@ -166,7 +166,7 @@ namespace CommandLine.Text
     /// Models the copyright informations part of an help text.
     /// You can assign it where you assign any <see cref="System.String"/> instance.
     /// </summary>
-    public class CopyrightInfo
+    internal class CopyrightInfo
     {
         private readonly bool _isSymbolUpper;
         private readonly int[] _years;
@@ -299,7 +299,7 @@ namespace CommandLine.Text
     /// Models the heading informations part of an help text.
     /// You can assign it where you assign any <see cref="System.String"/> instance.
     /// </summary>
-    public class HeadingInfo
+    internal class HeadingInfo
     {
         private readonly string _programName;
         private readonly string _version;
@@ -432,7 +432,7 @@ namespace CommandLine.Text
     #endregion
 
     #region Attributes
-    public abstract class MultiLineTextAttribute : Attribute
+    internal abstract class MultiLineTextAttribute : Attribute
     {
         //string _fullText;
         string _line1;
@@ -521,7 +521,7 @@ namespace CommandLine.Text
     }
 
     [AttributeUsage(AttributeTargets.Assembly, Inherited=false), ComVisible(true)]
-    public sealed class AssemblyLicenseAttribute : MultiLineTextAttribute
+    internal sealed class AssemblyLicenseAttribute : MultiLineTextAttribute
     {
         //public AssemblyLicenseAttribute(object fullText)
         //    : base(fullText)
@@ -550,7 +550,7 @@ namespace CommandLine.Text
     }
 
     [AttributeUsage(AttributeTargets.Assembly, Inherited=false), ComVisible(true)]
-    public sealed class AssemblyUsageAttribute : MultiLineTextAttribute
+    internal sealed class AssemblyUsageAttribute : MultiLineTextAttribute
     {
         //public AssemblyUsageAttribute(object fullText)
         //    : base(fullText)
@@ -594,12 +594,12 @@ namespace CommandLine.Text
     /// <summary>
     /// Handle parsing errors delegate.
     /// </summary>
-    public delegate void HandleParsingErrorsDelegate(HelpText current);
+    internal delegate void HandleParsingErrorsDelegate(HelpText current);
 
     /// <summary>
     /// Provides data for the FormatOptionHelpText event.
     /// </summary>
-    public class FormatOptionHelpTextEventArgs : EventArgs
+    internal class FormatOptionHelpTextEventArgs : EventArgs
     {
         private readonly BaseOptionAttribute _option;
 
@@ -626,7 +626,7 @@ namespace CommandLine.Text
     /// Models an help text and collects related informations.
     /// You can assign it in place of a <see cref="System.String"/> instance.
     /// </summary>
-    public class HelpText
+    internal class HelpText
     {
         private const int _builderCapacity = 128;
         private const int _defaultMaximumLength = 80; // default console width

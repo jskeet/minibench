@@ -43,7 +43,7 @@ namespace CommandLine
     /// <summary>
     /// Provides base properties for creating an attribute, used to define rules for command line parsing.
     /// </summary>
-    public abstract class BaseOptionAttribute : Attribute
+    internal abstract class BaseOptionAttribute : Attribute
     {
         private string _shortName;
         private object _defaultValue;
@@ -115,7 +115,7 @@ namespace CommandLine
     [AttributeUsage(AttributeTargets.Method,
             AllowMultiple=false,
             Inherited=true)]
-    public sealed class HelpOptionAttribute : BaseOptionAttribute
+    internal sealed class HelpOptionAttribute : BaseOptionAttribute
     {
         private const string DEFAULT_HELP_TEXT = "Display this help screen.";
 
@@ -173,7 +173,7 @@ namespace CommandLine
     /// <summary>
     /// Models an option that can accept multiple values as separated arguments.
     /// </summary>
-    public sealed class OptionArrayAttribute : OptionAttribute
+    internal sealed class OptionArrayAttribute : OptionAttribute
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandLine.OptionArrayAttribute"/> class.
@@ -190,7 +190,7 @@ namespace CommandLine
     /// Models an option specification.
     /// </summary>
     [AttributeUsage(AttributeTargets.Property , AllowMultiple=false, Inherited=true)]
-    public class OptionAttribute : BaseOptionAttribute
+    internal class OptionAttribute : BaseOptionAttribute
     {
         private readonly string _uniqueName;
         private string _mutuallyExclusiveSet;
@@ -249,7 +249,7 @@ namespace CommandLine
     /// Must be applied to a field compatible with an <see cref="System.Collections.Generic.IList&lt;T&gt;"/> interface
     /// of <see cref="System.String"/> instances.
     /// </summary>
-    public sealed class OptionListAttribute : OptionAttribute
+    internal sealed class OptionListAttribute : OptionAttribute
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandLine.OptionListAttribute"/> class.
@@ -288,7 +288,7 @@ namespace CommandLine
     [AttributeUsage(AttributeTargets.Property,
             AllowMultiple=false,
             Inherited=true)]
-    public sealed class ValueListAttribute : Attribute
+    internal sealed class ValueListAttribute : Attribute
     {
         private readonly Type _concreteType;
 
@@ -487,7 +487,7 @@ namespace CommandLine
     /// <summary>
     /// Models a bad parsed option.
     /// </summary>
-    public sealed class BadOptionInfo
+    internal sealed class BadOptionInfo
     {
         internal BadOptionInfo()
         {
@@ -1257,7 +1257,7 @@ namespace CommandLine
     /// <summary>
     /// Models a parsing error.
     /// </summary>
-    public class ParsingError
+    internal class ParsingError
     {
         internal ParsingError()
         {
@@ -1310,7 +1310,7 @@ namespace CommandLine
     /// <summary>
     /// Models a type that records the parser state afeter parsing.
     /// </summary>
-    public sealed class PostParsingState
+    internal sealed class PostParsingState
     {
         internal PostParsingState()
         {
@@ -1456,7 +1456,7 @@ namespace CommandLine
     /// <summary>
     /// Defines a basic interface to parse command line arguments.
     /// </summary>
-    public interface ICommandLineParser
+    internal interface ICommandLineParser
     {
         /// <summary>
         /// Parses a <see cref="System.String"/> array of command line arguments, setting values in <paramref name="options"/>
@@ -1489,7 +1489,7 @@ namespace CommandLine
     /// <summary>
     /// Provides the abstract base class for a strongly typed options target. Used when you need to get parsing errors.
     /// </summary>
-    public abstract class CommandLineOptionsBase
+    internal abstract class CommandLineOptionsBase
     {
         protected CommandLineOptionsBase()
         {
@@ -1508,7 +1508,7 @@ namespace CommandLine
     /// This exception is thrown when a generic parsing error occurs.
     /// </summary>
     [Serializable]
-    public sealed class CommandLineParserException : Exception
+    internal sealed class CommandLineParserException : Exception
     {
         internal CommandLineParserException()
         {
@@ -1533,7 +1533,7 @@ namespace CommandLine
     /// <summary>
     /// Specifies a set of features to configure a <see cref="CommandLine.CommandLineParser"/> behavior.
     /// </summary>
-    public sealed class CommandLineParserSettings
+    internal sealed class CommandLineParserSettings
     {
         private const bool CASE_SENSITIVE_DEFAULT = true;
 
@@ -1664,7 +1664,7 @@ namespace CommandLine
     /// Provides methods to parse command line arguments.
     /// Default implementation for <see cref="CommandLine.ICommandLineParser"/>.
     /// </summary>
-    public class CommandLineParser : ICommandLineParser
+    internal class CommandLineParser : ICommandLineParser
     {
         private static readonly ICommandLineParser _default = new CommandLineParser(true);
         private readonly CommandLineParserSettings _settings;
