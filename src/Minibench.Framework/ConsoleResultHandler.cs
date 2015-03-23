@@ -4,7 +4,6 @@
 
 using System;
 using System.Reflection;
-using System.Runtime.Remoting.Metadata.W3cXsd2001;
 
 namespace Minibench.Framework
 {
