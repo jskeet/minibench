@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Minibench.Framework.Skeet</id>
-    <version>0.2.1</version>
+    <version>0.2.2</version>
     <authors>Jon Skeet</authors>
     <owners>Jon Skeet</owners>
     <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
